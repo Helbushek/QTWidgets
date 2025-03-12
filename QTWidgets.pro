@@ -13,6 +13,7 @@ SOURCES += \
     MainWindow.cpp
 
 HEADERS += \
+    Counter.h \
     MainWindow.h
 
 FORMS += \
