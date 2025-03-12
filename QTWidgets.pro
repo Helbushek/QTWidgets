@@ -13,7 +13,8 @@ SOURCES += \
     MainWindow.cpp
 
 HEADERS += \
-    MainWindow.h
+    MainWindow.h \
+    StrValidator.h
 
 FORMS += \
     MainWindow.ui
