@@ -1,19 +1,20 @@
 #pragma once
 
 #include <QMainWindow>
+#include <QPushButton>
+#include <QWidget>
 
-QT_BEGIN_NAMESPACE
-    namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+#include "Area.h"
+
 
     class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
-        public:
-                 MainWindow(QWidget *parent = nullptr);
+  protected:
+    Area *area;
+    QPushButton *btn;
+    QWidget *centralWidget;
+  public:
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-  private:
-    Ui::MainWindow *ui;
 };

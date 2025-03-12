@@ -1,15 +1,21 @@
 #include "MainWindow.h"
-#include "ui_MainWindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-      , ui(new Ui::MainWindow)
+#include <QVBoxLayout>
+
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
-    ui->setupUi(this);
+    setWindowTitle(QString("Обработка событий"));
+    centralWidget = new QWidget(this);
+    setCentralWidget(centralWidget);
+    area = new Area(centralWidget);
+    btn = new QPushButton(QString("Завершить"), centralWidget);
+    QVBoxLayout *layout = new QVBoxLayout();
+    layout->addWidget(area);
+    layout->addWidget(btn);
+    connect(btn, &QPushButton::clicked, this, &QMainWindow::close);
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
 }
 
